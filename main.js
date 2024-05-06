@@ -47,14 +47,14 @@ function printResults(index){
     date.innerHTML = `${today.toLocaleDateString('en-ZA', { weekday: 'short' })} ${today.getDate()}/${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`;
     remaining.innerHTML = `${remainingDays} days left`;
     message.innerHTML = "Breathe. Relax. Pull yourself towards yourself.";
-    image.src="/1694_U1RVRElPIEtBVCAzOTItMTg.jpg";
+    image.src="./1694_U1RVRElPIEtBVCAzOTItMTg.jpg";
 } else {
     console.log("We are working");
     stat.innerHTML = "We are working!";
     date.innerHTML = `${today.toLocaleDateString('en-ZA', { weekday: 'short' })} ${today.getDate()}/${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`;
     remaining.innerHTML = `${remainingDays} days left`;
     message.innerHTML = "Time to tackle the daily grind."
-    image.src = "/Businessman run for going back work.jpg";
+    image.src = "./Businessman run for going back work.jpg";
 }
 }
 
