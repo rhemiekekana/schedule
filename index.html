@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lindo's Schedule</title>
+</head>
+<body>
+   
+    <div class="nft">
+        <div class='main'>
+          <img class='tokenImage' id="displayImage" src="/1694_U1RVRElPIEtBVCAzOTItMTg.jpg" alt="NFT" />
+          <h2 id="status"></h2>
+          <p class='description' id="message">.</p>
+          <div class='tokenInfo'>
+            <div class="price">
+              <p id="date"></p>
+            </div>
+            <div class="duration">
+              <ins>◷</ins>
+              <p id="remaining"></p>
+            </div>
+          </div>
+          <hr />
+          <div class='creator'>
+            <div class="date-select">
+              <label for="search-date">Select Date</label>
+            <input type="date" name="search-date"  />
+            </div>
+            <div class="button">
+              <button id="search" onClick="getDate()">Search</button>
+            </div> 
+          </div>
+          <hr />
+          <small id="footer">Bleq's Schedule 2024</small>
+        </div>
+      </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
