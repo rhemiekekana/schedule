@@ -184,7 +184,7 @@ code {
   text-align: center;
 }
 
-#author {
+.version {
   font-size: 10px;
   font-weight: 300;
   text-align: center;
