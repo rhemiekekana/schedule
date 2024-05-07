@@ -12,11 +12,14 @@ let date = document.getElementById('date');
 let remaining = document.getElementById('remaining');
 let message = document.getElementById('message');
 let image = document.getElementById('displayImage');
+let quoteText = document.getElementById('quote');
+let author = document.getElementById('author');
 let startDay = new Date("2024/05/05");
 let today = new Date();
 let Difference_In_Time;
 let Difference_In_Days;
 let remainingDays;
+let quotes = [];
 
 calculateDays(startDay, today);
 
@@ -42,14 +45,12 @@ function calculateDays(){
 
 function printResults(index){
   if (index % 2) {
-    console.log("We are off");
     stat.innerHTML = "We are off!";
     date.innerHTML = `${today.toLocaleDateString('en-ZA', { weekday: 'short' })} ${today.getDate()}/${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`;
     remaining.innerHTML = `${remainingDays} days left`;
     message.innerHTML = "Breathe. Relax. Pull yourself towards yourself.";
     image.src="./1694_U1RVRElPIEtBVCAzOTItMTg.jpg";
 } else {
-    console.log("We are working");
     stat.innerHTML = "We are working!";
     date.innerHTML = `${today.toLocaleDateString('en-ZA', { weekday: 'short' })} ${today.getDate()}/${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`;
     remaining.innerHTML = `${remainingDays} days left`;
@@ -57,5 +58,35 @@ function printResults(index){
     image.src = "./Businessman run for going back work.jpg";
 }
 }
+
+//Quote generator
+
+async function getQuotes () {
+  fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    quotes.push(data);
+    generateQuote();
+  });
+}
+
+
+getQuotes();
+
+
+
+//Generate random quote
+function generateQuote() {
+  let randomQuote = quotes[0][Math.floor(Math.random() * quotes[0].length)];
+  
+  quoteText.innerHTML = `${randomQuote.text}`;
+  author.innerHTML = `- ${randomQuote.author.slice(0, -10)}`;
+  console.log(randomQuote);
+}
+
+
+
 
 

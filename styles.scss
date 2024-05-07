@@ -181,8 +181,26 @@ code {
     }
   }
 
+  #quote {
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    margin-top: 0;
+    padding-top: 0;
+    color: white;
+    text-align: center;
+  }
+
+  #author {
+    font-size: 10px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    
+  }
+  
   #footer {
     text-align: center;
     font-size: 10px;
   }
-  
