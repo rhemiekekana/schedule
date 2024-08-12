@@ -4,7 +4,6 @@ const daysArray = [];
 for (let i = 1; i <= 365; i += 4) {
   daysArray.push([i, i + 1, i + 2, i + 3]);
 }
-console.log(`Days array: ${daysArray}`);
 
 // setting search date
 let dateSearch = document.querySelector('input[type="date"]');
@@ -27,10 +26,8 @@ calculateDays(startDay, today);
 
 function getDate(){
   let searchDate = dateSearch.value;
-  console.log(`Search date: ${searchDate}`);
   today =  new Date(searchDate);
   calculateDays(startDay, today);
-  console.log(`Today: ${today}`)
   return today;
 }
 
@@ -39,16 +36,10 @@ function calculateDays(){
   Difference_In_Days = Math.round(Difference_In_Time / (1000 * 3600 * 24));
   //find index of number of days from daysArray
   let searchNumber = Difference_In_Days;
-  console.log(`SearchNumber: ${searchNumber}`);
   let index = daysArray.findIndex((subArray) => subArray.includes(searchNumber));
-  console.log(`Index: ${index}`);
   daysIndex = daysArray[index].indexOf(searchNumber);
-  console.log(`DaysIndex: ${daysIndex}`);
   remainingDays = daysArray[index].length - (daysIndex);
-  console.log(`RemainingDays: ${remainingDays}`);
   printResults(index);
-  console.log(daysArray);
-  console.log(index);
   return index;
 }
 
